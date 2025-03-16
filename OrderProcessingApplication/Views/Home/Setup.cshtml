@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+
+@model OrderProcessingApplication.DAL.OrderData
+<div class="card">
+    <div class="card-header">
+        <h1>Orders List</h1>
+    </div>
+    <div class="card-body">
+        <form method="post" action="Setup">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="form-label" for="CustomerName">Customer Name:</label>
+                        <input type="text" asp-for="CustomerName" class="form-control" required />
+                        <input type="hidden" asp-for="ID" />
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="form-label" for="CustomerType">Customer Type:</label>
+                        <select asp-for="CustomerType" class="form-select" required>
+                            <option value="New">New</option>
+                            <option value="Loyal">Loyal</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="form-label" for="PhoneNumber">Phone Number:</label>
+                        <input type="number" asp-for="PhoneNumber" class="form-control" required />
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="form-label" for="Email">Email:</label>
+                        <input type="email" asp-for="Email" class="form-control" required />
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="form-label" for="Amount">Amount:</label>
+                        <input type="number" asp-for="Amount" class="form-control" required />
+                        <input type="hidden" asp-for="Discount" />
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <input class="btn btn-primary" type="submit" value="Save" />
+                        <a class="btn btn-info" asp-controller="Home" asp-action="Index" >Back</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
